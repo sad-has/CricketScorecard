@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CricTrack Premium</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Tailwind Configuration for Custom Palette -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        premium: {
+                            light: '#AFB3B7',   // Light Grey
+                            muted: '#69818D',   // Muted Blue-Grey
+                            grey: '#5A636A',   // Dark Grey
+                            teal: '#2D4A53',   // Teal/Slate
+                            dark: '#132E35',   // Dark Teal
+                            deep: '#0D1F23',   // Very Dark Teal/Black
+                            // Generated lighter tints for backgrounds
+                            50: '#F4F6F7',
+                            100: '#E3E6E8'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Google Font (Inter) -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- Canvas Confetti -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="bg-premium-50 text-premium-deep min-h-screen flex flex-col selection:bg-premium-teal selection:text-white">
+
+    <!-- Header -->
+    <div
+        class="sticky top-0 z-20 bg-premium-deep/95 backdrop-blur-md text-white shadow-lg border-b border-premium-dark">
+        <div class="max-w-lg mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center gap-2 font-bold text-xl tracking-tight cursor-pointer hover:opacity-80 transition-opacity"
+                onclick="router('HOME')">
+                <div
+                    class="w-8 h-8 bg-gradient-to-br from-premium-teal to-premium-dark rounded-lg flex items-center justify-center shadow-lg shadow-black/20">
+                    <i data-lucide="activity" class="text-white w-5 h-5"></i>
+                </div>
+                <span>Cric<span class="text-premium-light">Track</span></span>
+            </div>
+            <div id="header-actions"></div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div id="app" class="flex-1 max-w-lg mx-auto w-full pb-24 px-4 pt-6">
+        <div class="text-center py-10 text-premium-muted">Loading App...</div>
+    </div>
+
+    <!-- Modals Overlay -->
+    <div id="modal-overlay"></div>
+
+    <!-- Application Logic -->
+    <script src="app.js"></script>
+</body>
+
+</html>
